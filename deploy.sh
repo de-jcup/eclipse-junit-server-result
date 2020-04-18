@@ -17,4 +17,4 @@ if [ -z "$BINTRAY_API_KEY" ]; then
 	echo "bintray api key not set"
 	show_help_and_exit;
 fi
-./pushToBintray.sh ${BINTRAY_USER} ${BINTRAY_API_KEY} de-jcup junit-serverresult update-site 0.4.0 ./junit-serverresult-updatesite/
+./pushToBintray.sh ${BINTRAY_USER} ${BINTRAY_API_KEY} de-jcup junit-server-result update-site 0.4.0 ./junit-server-result-updatesite/
