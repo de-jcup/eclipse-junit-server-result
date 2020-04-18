@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="x.y.z.adapter.AbstractAdapterConfigBuilderTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2020-04-09T17:06:17" hostname="devtux" time="0.281">
+  <properties/>
+  <testcase name="config_with_timeout_set_with_3_minutes_has_3_minutes" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="defining_a_proxy_hostname_but_no_port_throws_illegal_state" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.001"/>
+  <testcase name="when_no_target_ips_set_the_config_has_an_empty_list_of_ips" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="config_userid_password_set_has_correct_Base64_token" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.121"/>
+  <testcase name="config_without_timetowait_set_has_one_minute" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="when_one_target_ips_set_the_config_has_one_inet_adress_entry" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="when_target_uri_is_set_by_string__target_uri_is_as_expected_and_list_is_1" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.001"/>
+  <testcase name="isProxyDefined_false_no_proxy_set_getProxyHostname_returns_null" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="getter_for_set_password_results_in_same_string_even_when_sealed" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.123"/>
+  <testcase name="when_no_target_url_set_the_config_has_null_as_target_uri_and_string_and_an_empty_list_of_uris" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="rootURIShrinker_is_used_when_building" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.031"/>
+  <testcase name="get_trace_id_returned_not_null_even_when_defined_null_as_defined" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.001"/>
+  <testcase name="when_doublicated_target_uri_is_set__target_uri_is_as_expected_and_list_is_1" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="when_projectId_is_set_its_also_in_configuration" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="isProxyDefined_true_when_proxy_set_getProxyHostname_and_port_config_returns_both_values" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.001"/>
+  <testcase name="config_without_timeout_set_has_5_days_per_default" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="config_with_timetowait_n1_has_one_minute" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="config_with_timeout_n1_set_has_5_days_per_default" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="config_with_time_to_check_set_with_3_minutes_has_3_minutes" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="get_trace_id_returned_as_defined" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <testcase name="when_one_target_uri_is_set__target_uri_is_as_expected_and_list_is_1" classname="x.y.z.adapter.AbstractAdapterConfigBuilderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="x.y.z.adapter.AbstractAdapterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-04-09T17:06:17" hostname="devtux" time="0.045">
+  <properties/>
+  <testcase name="get_api_for_website_slash_create_returns_full_url1" classname="x.y.z.adapter.AbstractAdapterTest" time="0.041"/>
+  <testcase name="api_prefix_with_start_and_end_base_has_also_end_api_has_start_and_end" classname="x.y.z.adapter.AbstractAdapterTest" time="0.0"/>
+  <testcase name="get_api_for_slash_website_slash_create_returns_full_url_without_double_slashes1" classname="x.y.z.adapter.AbstractAdapterTest" time="0.001"/>
+  <testcase name="get_api_for_website_slash_create_returns_full_url" classname="x.y.z.adapter.AbstractAdapterTest" time="0.001"/>
+  <testcase name="get_api_for_slash_website_slash_create_returns_full_url_without_double_slashes" classname="x.y.z.adapter.AbstractAdapterTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

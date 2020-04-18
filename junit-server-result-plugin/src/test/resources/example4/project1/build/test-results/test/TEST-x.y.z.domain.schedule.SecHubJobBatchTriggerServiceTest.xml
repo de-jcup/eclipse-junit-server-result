@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="x.y.z.domain.schedule.SecHubJobBatchTriggerServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-04-09T17:09:28" hostname="devtux" time="0.093">
+  <properties/>
+  <testcase name="when_marker_service_returns_job_launcher_service_is_called" classname="x.y.z.domain.schedule.SecHubJobBatchTriggerServiceTest" time="0.087"/>
+  <testcase name="when_processsing_is_disabled_but_marker_service_returns_job_launcher_service_is_NOT_called" classname="x.y.z.domain.schedule.SecHubJobBatchTriggerServiceTest" time="0.002"/>
+  <testcase name="triggerExecutionOfNextJob__calls_marker_service_markNextJobExecutedByThisPOD" classname="x.y.z.domain.schedule.SecHubJobBatchTriggerServiceTest" time="0.001"/>
+  <testcase name="when_marker_service_returns_NO_job_launcher_service_is_NOT_called" classname="x.y.z.domain.schedule.SecHubJobBatchTriggerServiceTest" time="0.002"/>
+  <system-out><![CDATA[19:09:28.503 [Test worker] WARN x.y.z.domain.schedule.SchedulerJobBatchTriggerService - Job processing is disabled, so cancel scheduling. Environment: null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

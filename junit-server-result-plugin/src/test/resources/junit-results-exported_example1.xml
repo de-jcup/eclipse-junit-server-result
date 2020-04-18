@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite name="suite1" tests="4" skipped="0" failures="1" errors="2" timestamp="2020-04-07T11:04:40" hostname="fv-az50" time="0.062">
+  <properties/>
+  <testcase name="testcase1" classname="x.y.z.Classname" time="0.007"/>
+  <testcase name="testcase2" classname="x.y.z.Classname" time="0.033"/>
+  <testcase name="testcase3" classname="x.y.z.Classname" time="0.004"/>
+  <testcase name="testcase4" classname="x.y.z.Classname" time="0.004"/>
+  <system-out><![CDATA[2020-04-07 11:04:39.719-Testdata-Systemout]]></system-out>
+  <system-err><![CDATA[2020-04-07 11:04:39.719-Testdata-Systemerr]]></system-err>
+</testsuite>
+
+</testsuites>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.jcup.junit.serverresult_0.1.6.jar" id="de.jcup.junit.serverresult" version="0.1.6"/>
+   <feature url="features/de.jcup.junit.serverresult_0.1.7.jar" id="de.jcup.junit.serverresult" version="0.1.7"/>
+   <feature url="features/de.jcup.junit.serverresult_0.1.8.jar" id="de.jcup.junit.serverresult" version="0.1.8">
+      <category name="de.jcup.junit.serverresult.site.beta"/>
+   </feature>
+   <feature url="features/de.jcup.junit.serverresult_0.2.0.jar" id="de.jcup.junit.serverresult" version="0.2.0">
+      <category name="de.jcup.junit.serverresult.site.beta"/>
+   </feature>
+   <feature url="features/de.jcup.junit.serverresult_0.3.0.jar" id="de.jcup.junit.serverresult" version="0.3.0">
+      <category name="de.jcup.junit.serverresult.site.beta"/>
+   </feature>
+   <category-def name="de.jcup.junit.serverresult.site.beta" label="Beta version"/>
+</site>

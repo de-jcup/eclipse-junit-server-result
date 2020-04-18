@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="de.jcup.junit.serverresult.importWizards.category"
+            name="JUnit server result">
+      </category>
+       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+       <!--                          WIZARD                                      -->
+       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <wizard
+            id="de.jcup.junit.serverresult.importWizards.JunitResultImportWizard"
+            name="Import JUnit server result files"
+            class="de.jcup.junit.serverresult.importWizards.JunitResultImportWizard"
+            category="de.jcup.junit.serverresult.importWizards.category"
+            icon="icons/junit-serverresult.png">
+         <description>
+            Import junit result file(s) or a complete folder structure from the local file system into JUnit server result view
+         </description>
+      </wizard>
+   </extension>
+       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+       <!--                          VIEW                                        -->
+       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Junit server result"
+            id="de.jcup.junit.serverresult.category">
+      </category>
+      <view
+            id="de.jcup.junit.serverresult.views.JUnitServerResultView"
+            name="JUnit server result"
+            icon="icons/junit-serverresult.png"
+            class="de.jcup.junit.serverresult.views.JUnitServerResultView"
+            category="de.jcup.junit.serverresult.category"
+            inject="true">
+      </view>
+   </extension>
+   
+   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <!--                          PERSPECTIVE                                 -->
+   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="de.jcup.junit.serverresult.views.JUnitServerResultView"
+               relative="org.eclipse.jdt.junit.ResultView"
+               relationship="bottom"
+               ratio="0.5">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <!--                          PREFERENCES                                 -->
+   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            id="de.jcup.junit.serverresult.preferences.JUnitServerResultPreferencePage"
+            name="JUnit server result"
+            class="de.jcup.junit.serverresult.preferences.JUnitServerResultPreferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="de.jcup.junit.serverresult.preferences.JUnitServerResultPreferenceInitializer">
+      </initializer>
+   </extension>
+   
+   
+   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <!--                          CONSOLE                                     -->
+   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <extension point="org.eclipse.ui.console.consoleFactories">
+       <consoleFactory
+             class="de.jcup.junit.serverresult.JUnitServerResultConsoleFactory"
+             icon="icons/junit-serverresult.png"
+             label="JUnit server result Console">
+       </consoleFactory>
+   </extension>
+   
+   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <!--                          EDITOR                                      -->
+   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="de.jcup.junit.serverresult.editor.JUnitServerResultLogFileEditor"
+            default="false"
+            icon="icons/junit-serverresult.png"
+            id="de.jcup.junit.serverresult.editor.JUnitServerResultLogFileEditor"
+            name="JUnit server result log editor">
+      </editor>
+   </extension>
+   
+</plugin>
