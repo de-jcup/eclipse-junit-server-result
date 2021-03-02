@@ -13,7 +13,9 @@
  * and limitations under the License.
  *
  */
- package de.jcup.junit.serverresult.preferences;
+package de.jcup.junit.serverresult.preferences;
+
+import static de.jcup.junit.serverresult.preferences.JUnitServerResultPreferenceConstants.*;
 
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -43,6 +45,11 @@ public class JUnitServerResultPreferences {
 
     public boolean getBooleanPreference(JUnitServerResultPreferenceConstants id) {
         boolean data = getPreferenceStore().getBoolean(id.getId());
+        return data;
+    }
+
+    public int getIntegerPreference(JUnitServerResultPreferenceConstants id) {
+        int data = getPreferenceStore().getInt(id.getId());
         return data;
     }
 
@@ -88,20 +95,23 @@ public class JUnitServerResultPreferences {
     }
 
     public boolean getAutoLinkLogFileWhenLogFileLocationChanges() {
-        return getBooleanPreference(JUnitServerResultPreferenceConstants.ENABLE_AUTOLINK_WITH_LOGFILE_ON_LOGFILE_LOCATION_CHANGES);
+        return getBooleanPreference(ENABLE_AUTOLINK_WITH_LOGFILE_ON_LOGFILE_LOCATION_CHANGES);
     }
 
-    
-    public String getLogTimeDatePattern(){
-        return getPreferenceStore().getString(JUnitServerResultPreferenceConstants.LOGFILE_TIMESTAMP_PATTERN.getId());
+    public int getAdditionalMillisecondsInLogFileEditor() {
+        return getIntegerPreference(ADDITIONAL_MILLISECONDS_SHOWN_IN_LOGFILE_EDITOR);
     }
-    
+
+    public String getLogTimeDatePattern() {
+        return getPreferenceStore().getString(LOGFILE_TIMESTAMP_PATTERN.getId());
+    }
+
     public String getLastImportAbsolutePath() {
-        return getPreferenceStore().getString(JUnitServerResultPreferenceConstants.LAST_IMPORT_ABSOLUTE_PATH.getId());
+        return getPreferenceStore().getString(LAST_IMPORT_ABSOLUTE_PATH.getId());
     }
-    
+
     public void setLastImportAbsolutePath(String absolutePath) {
-        getPreferenceStore().setValue(JUnitServerResultPreferenceConstants.LAST_IMPORT_ABSOLUTE_PATH.getId(),absolutePath);
+        getPreferenceStore().setValue(LAST_IMPORT_ABSOLUTE_PATH.getId(), absolutePath);
     }
 
 }

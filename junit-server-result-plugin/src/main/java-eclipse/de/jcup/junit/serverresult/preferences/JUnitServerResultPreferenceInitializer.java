@@ -31,6 +31,7 @@ public class JUnitServerResultPreferenceInitializer extends AbstractPreferenceIn
         IPreferenceStore store = Activator.getDefault().getPreferenceStore();
         store.setDefault(JUnitServerResultPreferenceConstants.ENABLE_AUTOLINK_WITH_LOGFILE_ON_LOGFILE_LOCATION_CHANGES.getId(), true);
         store.setDefault(JUnitServerResultPreferenceConstants.LOGFILE_TIMESTAMP_PATTERN.getId(), JUnitServerResultConstants.DEFAULT_LOGFILE_FORMAT);
+        store.setDefault(JUnitServerResultPreferenceConstants.ADDITIONAL_MILLISECONDS_SHOWN_IN_LOGFILE_EDITOR.getId(), 1000);
         
     }
 

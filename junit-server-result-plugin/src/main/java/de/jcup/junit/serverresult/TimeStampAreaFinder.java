@@ -21,6 +21,8 @@ import java.util.Date;
 
 public class TimeStampAreaFinder {
 
+    private int additionalMillisecondsAtEnd;
+
     public LogFileLocation findLogFileLocationInArea(String text, DateFormat logDateFormat, TimeStampArea wantedArea, ProgressCallback callback) {
         if (callback==null) {
             callback= ProgressCallback.NULL_PROGRESS;
@@ -50,9 +52,9 @@ public class TimeStampAreaFinder {
                 location.end = scanFrom + findLocation(endTextToScan, wantedArea.endTimeStamp, logDateFormat, true, callback);
             }
         }
-
         return location;
     }
+
 
     private int findLocation(String text, Date timeStamp, DateFormat logDateFormat, boolean forward, ProgressCallback callback) {
         /* we start to lookup for exact timestamp */
@@ -106,12 +108,16 @@ public class TimeStampAreaFinder {
             int millisecondsAsInt = (int) milliseconds;
 
             long millisBegin = area.beginTimeStamp.getTime();
-            long millisEnd = millisBegin + millisecondsAsInt;
+            long millisEnd = millisBegin + millisecondsAsInt +additionalMillisecondsAtEnd;
 
             area.endTimeStamp = new Date(millisEnd);
         }
 
         return area;
+    }
+
+    public void setAdditionalMilliseconds(int additionalMillisecondsAtEnd) {
+        this.additionalMillisecondsAtEnd=additionalMillisecondsAtEnd;
     }
 
 }

@@ -97,6 +97,27 @@ public class TimeStampAreaFinderTest {
         assertEquals("2020-04-07T11:05:21:123", formatWithMillis.format(area.endTimeStamp));
 
     }
+    
+    @Test
+    public void a_testsuite_with_timestamp_and_time_and_812_additional_milliseconds_set() throws Exception {
+        /* prepare */
+        JUnitTestSuite suite1 = new JUnitTestSuite();
+        suite1.timeStamp = "2020-04-07T11:05:21";
+        suite1.timeInSeconds="0.123";
+
+        finderToTest.setAdditionalMilliseconds(812);
+        
+        /* execute */
+        TimeStampArea area = finderToTest.findArea(suite1);
+
+        /* test */
+        assertNotNull(area.endTimeStamp);
+        
+        SimpleDateFormat formatWithMillis = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss:SSS");
+        assertEquals("2020-04-07T11:05:21:000", formatWithMillis.format(area.beginTimeStamp));
+        assertEquals("2020-04-07T11:05:21:935", formatWithMillis.format(area.endTimeStamp));
+
+    }
 
     @Test
     public void a_testsuite_with_timestamp_only() throws Exception {

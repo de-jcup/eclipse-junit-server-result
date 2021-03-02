@@ -13,22 +13,25 @@
  * and limitations under the License.
  *
  */
- package de.jcup.junit.serverresult.preferences;
+package de.jcup.junit.serverresult.preferences;
 
 import java.text.SimpleDateFormat;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
+import org.eclipse.jface.preference.IntegerFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
-import de.jcup.junit.serverresult.Activator;
+import static de.jcup.junit.serverresult.preferences.JUnitServerResultPreferenceConstants.*;
 
+import de.jcup.junit.serverresult.Activator;
 
 public class JUnitServerResultPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
     private StringFieldEditor logFileDatePatternFieldEditor;
+    private IntegerFieldEditor additionalMillisecondsShownInLogFiledEditor;
 
     public JUnitServerResultPreferencePage() {
         super(GRID);
@@ -41,27 +44,29 @@ public class JUnitServerResultPreferencePage extends FieldEditorPreferencePage i
         String datePattern = logFileDatePatternFieldEditor.getStringValue();
         try {
             new SimpleDateFormat(datePattern);
-        }catch(RuntimeException e) {
-            setErrorMessage("Log file date pattern not correct:"+datePattern+" - must be in simple date format!");
+        } catch (RuntimeException e) {
+            setErrorMessage("Log file date pattern not correct:" + datePattern + " - must be in simple date format!");
             return false;
         }
         return super.isValid();
     }
-    
+
     /**
      * Creates the field editors. Field editors are abstractions of the common GUI
      * blocks needed to manipulate various types of preferences. Each field editor
      * knows how to save and restore itself.
      */
     public void createFieldEditors() {
-        addField(new BooleanFieldEditor(JUnitServerResultPreferenceConstants.ENABLE_AUTOLINK_WITH_LOGFILE_ON_LOGFILE_LOCATION_CHANGES.getId(), "&Enable autolink with log file on drop", getFieldEditorParent()));
+        addField(new BooleanFieldEditor(ENABLE_AUTOLINK_WITH_LOGFILE_ON_LOGFILE_LOCATION_CHANGES.getId(), "&Enable autolink with log file on drop", getFieldEditorParent()));
 
-        logFileDatePatternFieldEditor = new StringFieldEditor(JUnitServerResultPreferenceConstants.LOGFILE_TIMESTAMP_PATTERN.getId(), "&Logfile time stamp date pattern", getFieldEditorParent());
+        logFileDatePatternFieldEditor = new StringFieldEditor(LOGFILE_TIMESTAMP_PATTERN.getId(), "&Logfile time stamp date pattern", getFieldEditorParent());
         addField(logFileDatePatternFieldEditor);
-
+        
+        additionalMillisecondsShownInLogFiledEditor = new IntegerFieldEditor(ADDITIONAL_MILLISECONDS_SHOWN_IN_LOGFILE_EDITOR.getId(), 
+                "Additional milliseconds to grab in test log file", getFieldEditorParent());
+        addField(additionalMillisecondsShownInLogFiledEditor);
     }
 
-    
     public void init(IWorkbench workbench) {
     }
 

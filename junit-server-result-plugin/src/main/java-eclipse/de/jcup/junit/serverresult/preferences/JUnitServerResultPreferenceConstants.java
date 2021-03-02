@@ -21,8 +21,13 @@
 public enum JUnitServerResultPreferenceConstants implements PreferenceIdentifiable {
 
     ENABLE_AUTOLINK_WITH_LOGFILE_ON_LOGFILE_LOCATION_CHANGES("enableAutoLinkWithLogFileOnLogfileLocationChanges"),
+    
     LOGFILE_TIMESTAMP_PATTERN("logFileTimeStampPattern"),
-    LAST_IMPORT_ABSOLUTE_PATH("lastImportAbsolutePath")
+    
+    LAST_IMPORT_ABSOLUTE_PATH("lastImportAbsolutePath"), 
+    
+    ADDITIONAL_MILLISECONDS_SHOWN_IN_LOGFILE_EDITOR("additionalMillisecondsShownInLogFileEditor"),
+    
     ;
 
     private String id;

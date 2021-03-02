@@ -602,6 +602,7 @@ public class JUnitServerResultView extends ViewPart {
             throw new IllegalStateException(
                     "Please define a server log file at bottom of JUnit server result view! \n\nWhen you want to link the testsuite with server log output, you must define an existing server log file!");
         }
+        timeStampAreaFinder.setAdditionalMilliseconds(JUnitServerResultPreferences.getInstance().getAdditionalMillisecondsInLogFileEditor());
         TimeStampArea wantedArea = timeStampAreaFinder.findArea(ts);
         final StringBuilder targetTextBuilder = new StringBuilder();
         targetTextBuilder.append("Origin logfile: " + path.toAbsolutePath().toString());
