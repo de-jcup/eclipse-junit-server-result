@@ -42,13 +42,12 @@ public class JUnitServerResultUtil {
         showViewInActivePage(ECLIPSE_CONSOLE_VIEW);
     }
 
-    
     public static JunitImportContext getContext() {
         return junitImportContext;
     }
 
     private static void showViewInActivePage(String viewId) {
-        EclipseUtil.safeAsyncExec(()-> {
+        EclipseUtil.safeAsyncExec(() -> {
             try {
                 IWorkbenchPage page = EclipseUtil.getActivePage();
                 if (page == null) {
@@ -75,25 +74,30 @@ public class JUnitServerResultUtil {
         }
         return null;
     }
-    
+
     public static JUnitServerResultView findJUnitResultViewOrNull() {
-        IViewPart viewPart  = EclipseUtil.getActivePage().findView(JUnitServerResultView.ID);
-        return (JUnitServerResultView)viewPart;
+        IViewPart viewPart = EclipseUtil.getActivePage().findView(JUnitServerResultView.ID);
+        return (JUnitServerResultView) viewPart;
     }
-    
+
     public static void setLogEditorText(Path path, final String targetText) {
-        EclipseUtil.safeAsyncExec(()->{
-            
+        EclipseUtil.safeAsyncExec(() -> {
+
             String editorId = JUnitServerResultLogFileEditor.EDITOR_ID;
             JUnitServerResultLogFileEditor logFileEditor = JUnitServerResultUtil.findExistingLogFileEditorOrNull();
             StringEditorInput input = new StringEditorInput(path, targetText);
+            IWorkbenchPage activePage = EclipseUtil.getActivePage();
+            if (activePage == null) {
+                return;
+            }
             if (logFileEditor != null) {
-                EclipseUtil.getActivePage().reuseEditor(logFileEditor, input);
+                activePage.reuseEditor(logFileEditor, input);
+                activePage.activate(logFileEditor);
             } else {
                 try {
-                    EclipseUtil.getActivePage().openEditor(input, editorId);
+                    activePage.openEditor(input, editorId);
                 } catch (PartInitException e) {
-                   Activator.getDefault().logError("Cannot open editor", e);
+                    Activator.getDefault().logError("Cannot open editor", e);
                 }
             }
         });
