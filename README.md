@@ -1,3 +1,5 @@
+[![Java CI with Gradle](https://github.com/de-jcup/eclipse-junit-server-result/actions/workflows/maven.yml/badge.svg)](https://github.com/de-jcup/eclipse-junit-server-result/actions/workflows/maven.yml)
+
 ### About
 This is an additional eclipse JUnit plugin. Project is hosted at https://github.com/de-jcup/eclipse-junit-server-result.
 
