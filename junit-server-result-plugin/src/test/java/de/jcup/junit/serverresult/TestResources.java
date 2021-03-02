@@ -29,6 +29,9 @@ public class TestResources {
     }
     
     public static File getTestResourcesFolder() {
+        if (! testResourcesFolder.exists()) {
+            throw new IllegalStateException("does not exist:"+testResourcesFolder);
+        }
         return testResourcesFolder;
     }
 }

@@ -4,12 +4,32 @@
  * Root build file: "${rootProject.projectDir}/build.gradle"
  * ============================================================================
  */
+
+configurations {
+  //https://github.com/dom4j/dom4j/issues/99
+  pluginLibraries.extendsFrom compileOnly
+}
+
+
 dependencies {
 
-	compile library.commons_lang
-	compile library.commons_io
-	
-	compile library.slf4j_api
-	compile library.slf4j_jdk
-
+    pluginLibraries library.commons_lang
+    pluginLibraries library.commons_text
+    pluginLibraries library.dom4j
+    
 }
+
+task cleanUpRuntimeLibs(type: Delete){
+
+    delete "${rootProject.projectDir}/junit-server-result-plugin/lib/m2"
+}
+
+task copyRuntimeLibs(type: Copy, dependsOn: cleanUpRuntimeLibs) {
+    group "junit-server-result"
+    description "copies dependencies to plugin library directory"
+    
+    into "${rootProject.projectDir}/junit-server-result-plugin/lib/m2"
+    from configurations.pluginLibraries
+}
+
+tasks.findByName('eclipse').dependsOn 'copyRuntimeLibs'

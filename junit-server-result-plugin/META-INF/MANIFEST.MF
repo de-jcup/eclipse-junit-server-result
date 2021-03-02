@@ -19,9 +19,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: de.jcup.junit.console
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
- lib/de-jcup-eclipse-commons.jar,
- lib/dom4j-2.1.1.jar,
- lib/commons-lang3-3.10.jar,
- lib/commons-text-1.8.jar
+ lib/m2/commons-lang3-3.11.jar,
+ lib/m2/commons-text-1.8.jar,
+ lib/m2/dom4j-2.1.1.jar,
+ lib/other/de-jcup-eclipse-commons.jar
 Import-Package: org.eclipse.jdt.debug.ui.console,
  org.eclipse.ui.editors.text

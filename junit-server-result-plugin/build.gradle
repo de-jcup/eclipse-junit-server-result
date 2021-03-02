@@ -1,4 +1,8 @@
-
 dependencies {
-    implementation fileTree(dir: 'lib', include: '*.jar')
-} 
+
+    implementation library.commons_lang
+    implementation library.commons_text
+    implementation library.dom4j
+    
+
+}

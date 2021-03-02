@@ -1,0 +1,5 @@
+*.jar
+!de-jcup-eclipse-commons.jar
+
+# All other jars are automatically imported by `./gradlew eclipse`
+# currently de-jcup-eclipse-commons.jar is not available inside a maven repository... so added as binary (ugly but it works) 
