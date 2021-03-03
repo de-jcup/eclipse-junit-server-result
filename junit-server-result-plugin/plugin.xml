@@ -72,6 +72,12 @@
             name="JUnit server result"
             class="de.jcup.junit.serverresult.preferences.JUnitServerResultPreferencePage">
       </page>
+      <page
+         id="de.jcup.junit.serverresult.preferences.JUnitServerResultSyntaxColorPreferencePage"
+         class="de.jcup.junit.serverresult.preferences.JUnitServerResultSyntaxColorPreferencePage"
+         name="Syntax coloring"
+         category="de.jcup.junit.serverresult.preferences.JUnitServerResultPreferencePage">
+      </page>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">

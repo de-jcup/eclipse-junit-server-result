@@ -17,13 +17,17 @@ package de.jcup.junit.serverresult.editor;
 
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IReusableEditor;
+import org.eclipse.ui.editors.text.FileDocumentProvider;
 import org.eclipse.ui.editors.text.TextEditor;
 
 public class JUnitServerResultLogFileEditor extends TextEditor implements IReusableEditor {
 
     public static final String EDITOR_ID = "de.jcup.junit.serverresult.editor.JUnitServerResultLogFileEditor";
+    private static FileDocumentProvider fileDocumentProvider = new JunitServerResultLogFileDocumentProvider();
 
     public JUnitServerResultLogFileEditor() {
+        setSourceViewerConfiguration(new JunitServerResultLogFileEditorViewerConfiguration());
+        setDocumentProvider(fileDocumentProvider);
     }
     
     @Override
@@ -35,5 +39,6 @@ public class JUnitServerResultLogFileEditor extends TextEditor implements IReusa
     public void createPartControl(Composite parent) {
         super.createPartControl(parent);
     }
+    
 
 }

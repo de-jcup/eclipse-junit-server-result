@@ -65,6 +65,10 @@ public class JUnitServerResultPreferences {
         boolean data = getPreferenceStore().getDefaultBoolean(id.getId());
         return data;
     }
+    
+    public boolean isColorizingFullLogLine() {
+        return getBooleanPreference(COLORIZE_COMPLETE_LOG_LINE);
+    }
 
     public RGB getColor(PreferenceIdentifiable identifiable) {
         RGB color = PreferenceConverter.getColor(getPreferenceStore(), identifiable.getId());

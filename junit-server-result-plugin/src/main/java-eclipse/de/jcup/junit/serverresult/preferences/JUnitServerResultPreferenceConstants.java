@@ -28,6 +28,7 @@ public enum JUnitServerResultPreferenceConstants implements PreferenceIdentifiab
     
     ADDITIONAL_MILLISECONDS_SHOWN_IN_LOGFILE_EDITOR("additionalMillisecondsShownInLogFileEditor"),
     
+    COLORIZE_COMPLETE_LOG_LINE("colorizeCompleteLogLine"),
     ;
 
     private String id;
