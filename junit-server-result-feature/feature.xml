@@ -2,7 +2,7 @@
 <feature
       id="de.jcup.junit.serverresult"
       label="JUnit server result"
-      version="0.4.0"
+      version="1.0.0"
       provider-name="Albert Tregnaghi">
 
    <description url="https://github.com/de-jcup/eclipse-junit-server-result">
