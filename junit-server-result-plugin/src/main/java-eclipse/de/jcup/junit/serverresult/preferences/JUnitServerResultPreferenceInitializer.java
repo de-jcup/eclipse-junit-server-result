@@ -34,11 +34,11 @@ public class JUnitServerResultPreferenceInitializer extends AbstractPreferenceIn
         store.setDefault(JUnitServerResultPreferenceConstants.ENABLE_AUTOLINK_WITH_LOGFILE_ON_LOGFILE_LOCATION_CHANGES.getId(), true);
         store.setDefault(JUnitServerResultPreferenceConstants.LOGFILE_TIMESTAMP_PATTERN.getId(), JUnitServerResultConstants.DEFAULT_LOGFILE_FORMAT);
         store.setDefault(JUnitServerResultPreferenceConstants.ADDITIONAL_MILLISECONDS_SHOWN_IN_LOGFILE_EDITOR.getId(), 1000);
+        store.setDefault(JUnitServerResultPreferenceConstants.COLORIZE_COMPLETE_LOG_LINE.getId(), true);
         
         
         JUnitServerResultPreferences preferences = JUnitServerResultPreferences.getInstance();
         
-        preferences.setBooleanPreference(JUnitServerResultPreferenceConstants.COLORIZE_COMPLETE_LOG_LINE, true);
 
         /* +++++++++++++++++ */
         /* + Editor Colors + */

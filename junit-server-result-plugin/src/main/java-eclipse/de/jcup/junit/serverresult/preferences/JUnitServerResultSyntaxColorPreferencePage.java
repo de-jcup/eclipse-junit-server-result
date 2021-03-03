@@ -3,6 +3,7 @@ package de.jcup.junit.serverresult.preferences;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.ColorFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.swt.SWT;
@@ -20,6 +21,7 @@ import static de.jcup.junit.serverresult.preferences.JUnitServerResultSyntaxColo
 
 public class JUnitServerResultSyntaxColorPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
+    
     public JUnitServerResultSyntaxColorPreferencePage() {
         setPreferenceStore(JUnitServerResultPreferences.getInstance().getPreferenceStore());
     }
@@ -59,7 +61,9 @@ public class JUnitServerResultSyntaxColorPreferencePage extends FieldEditorPrefe
             }
 
         });
-
+        
+        BooleanFieldEditor colorizeFullLine = new BooleanFieldEditor(JUnitServerResultPreferenceConstants.COLORIZE_COMPLETE_LOG_LINE.getId(), "Highlight complete log lines", getFieldEditorParent());
+        addField(colorizeFullLine);
     }
 
 }
